@@ -12,19 +12,15 @@ public class BibliotecaApp {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Inicializando autores
         Autor autor1 = new Autor(1, "J.K. Rowling", new Date());
         Autor autor2 = new Autor(2, "George Orwell", new Date());
 
-        // Inicializando livros
         Livro livro1 = new Livro(1, "Harry Potter e a Pedra Filosofal", autor1);
         Livro livro2 = new Livro(2, "1984", autor2);
 
-        // Inicializando clientes
         Cliente cliente1 = new Cliente(1, "Maria", "maria@gmail.com");
         Cliente cliente2 = new Cliente(2, "João", "joao@gmail.com");
 
-        // Criando a biblioteca e adicionando dados
         Biblioteca biblioteca = new Biblioteca();
         biblioteca.adicionarLivro(livro1);
         biblioteca.adicionarLivro(livro2);
@@ -38,16 +34,15 @@ public class BibliotecaApp {
             System.out.println("2. Sair");
             System.out.print("Escolha uma opção: ");
             int opcao = scanner.nextInt();
-            scanner.nextLine();  // Consumir a quebra de linha
+            scanner.nextLine();
 
             if (opcao == 1) {
                 System.out.println("\nLivros disponíveis:");
                 biblioteca.listarLivrosDisponiveis();
                 System.out.print("\nEscolha o ID do livro para emprestar: ");
                 int livroId = scanner.nextInt();
-                scanner.nextLine();  // Consumir a quebra de linha
+                scanner.nextLine();
 
-                // Verificar qual cliente vai pegar o livro
                 System.out.print("Informe seu nome: ");
                 String nomeCliente = scanner.nextLine();
                 Cliente clienteSelecionado = null;
